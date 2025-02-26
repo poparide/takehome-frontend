@@ -54,13 +54,36 @@ export const tripFour: ITrip = {
 export const trips = [tripOne, tripTwo, tripThree, tripFour];
 
 export function GET(request: Request): Response {
+  const requestUrl = new URL(request.url);
+  const originId = requestUrl.searchParams.has("origin_id")
+    ? Number(requestUrl.searchParams.get("origin_id"))
+    : undefined;
+  const destinationId = requestUrl.searchParams.has("destination_id")
+    ? Number(requestUrl.searchParams.get("destination_id"))
+    : undefined;
+
+  const results = trips
+    // Filter trips by origin and destination
+    .filter((trip) => {
+      if (originId && trip.origin.id !== originId) {
+        return false;
+      }
+      return true;
+    })
+    .filter((trip) => {
+      if (destinationId && trip.destination.id !== destinationId) {
+        return false;
+      }
+      return true;
+    })
+    // Sort trips by departure time
+    .sort((a, b) => a.departure_time.localeCompare(b.departure_time));
+
   const responseData: IResponse<ITrip> = {
     previous: null,
     next: null,
-    count: trips.length,
-    results: trips.sort((a, b) =>
-      a.departure_time.localeCompare(b.departure_time)
-    ),
+    count: results.length,
+    results,
   };
 
   return Response.json(responseData);
