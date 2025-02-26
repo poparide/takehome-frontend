@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "poparide-takehome-frontend",
-    "slug": "poparide-takehome-frontend",
+    "name": "Poparide",
+    "slug": "Poparide",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "poparide",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -19,7 +19,7 @@
     },
     "web": {
       "bundler": "metro",
-      "output": "static",
+      "output": "server",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
