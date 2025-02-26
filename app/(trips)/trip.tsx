@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useLocalSearchParams } from "expo-router";
 
 async function fetchTrip(tripId: string | number): Promise<ITrip> {
-  const response = await fetch(`http://localhost:8081/api/trips/${tripId}`);
+  const response = await fetch(`/api/trips/${tripId}`);
   return response.json();
 }
 
@@ -14,7 +14,7 @@ export default function Trip() {
   const [trip, setTrip] = useState<ITrip>();
   useEffect(() => {
     fetchTrip(tripId).then((data) => setTrip(data));
-  }, []);
+  }, [tripId]);
 
   if (!trip) {
     return <Text>Loading...</Text>;

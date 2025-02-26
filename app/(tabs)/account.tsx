@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Text, ScrollView } from "react-native";
 
 async function fetchMe(): Promise<IUser> {
-  const response = await fetch("http://localhost:8081/api/users/me");
+  const response = await fetch("/api/users/me");
   return response.json();
 }
 

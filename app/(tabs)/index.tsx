@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Link } from "expo-router";
 
 async function fetchTrips(): Promise<IResponse<ITrip>> {
-  const response = await fetch("http://localhost:8081/api/trips");
+  const response = await fetch("/api/trips");
   return response.json();
 }
 
