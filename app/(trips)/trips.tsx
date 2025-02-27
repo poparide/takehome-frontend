@@ -6,15 +6,21 @@ import { useLocalSearchParams } from "expo-router";
 async function fetchTrips({
   originId,
   destinationId,
+  departureDate,
 }: {
   originId?: string;
   destinationId?: string;
+  departureDate?: string;
 }): Promise<IResponse<ITrip>> {
   const params = new URLSearchParams();
   if (originId) {
-    params.append("originId", originId);
-  } else if (destinationId) {
-    params.append("destinationId", destinationId);
+    params.append("origin_id", originId);
+  }
+  if (destinationId) {
+    params.append("destination_id", destinationId);
+  }
+  if (departureDate) {
+    params.append("departure_date", departureDate);
   }
 
   const response = await fetch(`/api/trips/?${params.toString()}`);
@@ -22,17 +28,18 @@ async function fetchTrips({
 }
 
 export default function Trip() {
-  const { originId, destinationId } = useLocalSearchParams<{
-    originId: string;
-    destinationId: string;
+  const { originId, destinationId, departureDate } = useLocalSearchParams<{
+    originId?: string;
+    destinationId?: string;
+    departureDate?: string;
   }>();
 
   const [trips, setTrips] = useState<ITrip[]>();
   useEffect(() => {
-    fetchTrips({ originId, destinationId }).then((data) => {
+    fetchTrips({ originId, destinationId, departureDate }).then((data) => {
       setTrips(data.results);
     });
-  }, [originId, destinationId]);
+  }, [originId, destinationId, departureDate]);
 
   if (!trips) {
     return <Text>Loading...</Text>;
@@ -42,7 +49,8 @@ export default function Trip() {
     <ScrollView>
       {trips.map((trip) => (
         <Text key={trip.id}>
-          {trip.origin.name} to {trip.destination.id}
+          {trip.origin.name} to {trip.destination.name} departing at{" "}
+          {trip.departure_time}
         </Text>
       ))}
     </ScrollView>
