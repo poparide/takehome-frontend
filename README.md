@@ -1,50 +1,80 @@
-# Welcome to your Expo app 👋
+# Poparide Frontend Take-Home
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This project template is provided by [Poparide](https://poparide.com) to evaluate your frontend skills and problem-solving approach within our Product team. The base Expo template includes initial setup so you can focus on building the required features without worrying about configuration.
 
-## Get started
+## Getting Started
 
-1. Install dependencies
+1. **Create a private repository** from this template.
+2. **Invite your reviewers** (you should have received a list of GitHub accounts).
+3. **Start implementing the required features** following the project guidelines below.
+
+## Task Overview
+
+You need to implement two screens based on [the Figma design](https://www.figma.com/design/SyGYoUKTm3PDmjknLu1euh/Poparide-Take-home-Mobile?node-id=0-1):
+
+1. **Search Trips Screen** ([`app/(tabs)/index.tsx`](<./app/(tabs)/index.tsx>))
+2. **Search Results Screen** ([`app/(trips)/index.tsx`](<./app/(trips)/index.tsx>))
+
+## API Endpoints
+
+The project includes predefined API endpoints, which you can modify or extend as needed.
+
+### `GET /api/locations/`
+
+Returns a list of locations.
+
+- `query=<string>`: Search locations by name.
+
+### `GET /api/trips/`
+
+Returns a list of trips.
+
+- `origin_id=<number>`: Location ID for the trip's starting point.
+- `destination_id=<number>`: Location ID for the trip's endpoint.
+- `departure_date=<string>`: An ISO-8601 formatted date for trip departure.
+
+## How We'll Evaluate Your Work
+
+We’ll assess your project based on the following criteria:
+
+- **Design:** Is your solution maintainable and scalable? Have you considered future changes?
+- **Code Quality:** Is your code clean, modular, and well-structured?
+- **Documentation:** Have you provided context around your decisions and assumptions? Use [`NOTES.md`](./NOTES.md) to document any relevant details.
+
+Your code will be tested on both iOS and Android simulators.
+
+### Time Expectations
+
+We respect your time and don’t expect you to spend more than **four hours** on this task. Time spent is not a strict evaluation criterion. However, if you choose to spend significantly more (or less) time, please note this in [`NOTES.md`](./NOTES.md) so we can factor it into our review.
+
+We encourage you to use [`NOTES.md`](./NOTES.md) to document:
+
+- What you would improve given more time.
+- Any scope considerations or trade-offs you made.
+- Features that were out of scope but worth mentioning.
+
+We don’t expect a finished product in four hours—what matters most is your approach and thought process!
+
+## Project Setup
+
+Follow these steps to set up the project locally:
+
+1. Ensure you have [Node.js LTS](https://nodejs.org/en/) installed.
+2. Install dependencies:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Start the app:
 
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+You'll then see options to run the app in:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- A [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- An [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- An [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go), a sandbox for trying out Expo development
