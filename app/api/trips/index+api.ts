@@ -61,6 +61,9 @@ export function GET(request: Request): Response {
   const destinationId = requestUrl.searchParams.has("destination_id")
     ? Number(requestUrl.searchParams.get("destination_id"))
     : undefined;
+  const departureDate = requestUrl.searchParams.has("departure_date")
+    ? requestUrl.searchParams.get("departure_date")
+    : undefined;
 
   const results = trips
     // Filter trips by origin and destination
@@ -72,6 +75,13 @@ export function GET(request: Request): Response {
     })
     .filter((trip) => {
       if (destinationId && trip.destination.id !== destinationId) {
+        return false;
+      }
+      return true;
+    })
+    // Filter trips by departure time
+    .filter((trip) => {
+      if (departureDate && trip.departure_time.startsWith(departureDate)) {
         return false;
       }
       return true;
