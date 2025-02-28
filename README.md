@@ -27,7 +27,9 @@ Returns a list of locations.
 
 - `query=<string>`: Search locations by name.
 
-#### Response
+<details>
+
+<summary>Response</summary>
 
 ```
 200 OK
@@ -47,6 +49,8 @@ Returns a list of locations.
 }
 ```
 
+</details>
+
 ### `GET /api/trips/`
 
 Returns a list of trips.
@@ -55,7 +59,9 @@ Returns a list of trips.
 - `destination_id=<number>`: Location ID for the trip's endpoint.
 - `departure_date=<string>`: An ISO-8601 formatted date for trip departure.
 
-#### Response
+<details>
+
+<summary>Response</summary>
 
 ```
 200 OK
@@ -119,11 +125,15 @@ Returns a list of trips.
 }
 ```
 
+</details>
+
 ### `GET /api/trips/<tripId>/`
 
 Return an individual trip by it's ID.
 
-#### Response
+<details>
+
+<summary>Response</summary>
 
 ```
 200 OK
@@ -178,6 +188,8 @@ Return an individual trip by it's ID.
    "price_per_seat": <string>
 }
 ```
+
+</details>
 
 ## How We'll Evaluate Your Work
 
