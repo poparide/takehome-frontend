@@ -27,6 +27,26 @@ Returns a list of locations.
 
 - `query=<string>`: Search locations by name.
 
+#### Response
+
+```
+200 OK
+{
+   "count": <int>,
+   "next": <string>,
+   "previous": <string>,
+   "results": [
+      {
+         "id": <int>,
+         "name": <string>,
+         "latitude": <float>,
+         "longitude": <float>
+      },
+      ...
+   ]
+}
+```
+
 ### `GET /api/trips/`
 
 Returns a list of trips.
@@ -35,9 +55,129 @@ Returns a list of trips.
 - `destination_id=<number>`: Location ID for the trip's endpoint.
 - `departure_date=<string>`: An ISO-8601 formatted date for trip departure.
 
+#### Response
+
+```
+200 OK
+{
+   "count": <int>,
+   "next": <string>,
+   "previous": <string>,
+   "results": [
+      {
+         "id": <int>,
+         "creator": {
+            "id": <int>,
+            "name": <string>,
+            "is_verified": <boolean>,
+            "stats": {
+               "avg_rating": <float>,
+               "trips_driven": <int>,
+               "trips_taken": <int>
+            }
+         },
+         "vehicle": {
+            "id": <int>,
+            "owner": <int>,
+            "make": <string>,
+            "model": <string>,
+            "year": <int>
+         },
+         "description": <string>,
+         "origin": {
+            "id": <int>,
+            "name": <string>,
+            "latitude": <float>,
+            "longitude": <float>
+         },
+         "destination": {
+            "id": <int>,
+            "name": <string>,
+            "latitude": <float>,
+            "longitude": <float>
+         },
+         "departure_time": <timestamp>,  // ISO-8601
+         "state": "open" | "closed" | "cancelled",
+         "passengers": [
+            {
+               "id": <int>,
+               "name": <string>,
+               "is_verified": <boolean>,
+               "stats": {
+                  "avg_rating": <float>,
+                  "trips_driven": <int>,
+                  "trips_taken": <int>
+               }
+            },
+            ...
+         ],
+         "number_of_seats": <int>,
+         "price_per_seat": <string>
+      },
+      ...
+   ]
+}
+```
+
 ### `GET /api/trips/<tripId>/`
 
 Return an individual trip by it's ID.
+
+#### Response
+
+```
+200 OK
+{
+   "id": <int>,
+   "creator": {
+      "id": <int>,
+      "name": <string>,
+      "is_verified": <boolean>,
+      "stats": {
+         "avg_rating": <float>,
+         "trips_driven": <int>,
+         "trips_taken": <int>
+      }
+   },
+   "vehicle": {
+      "id": <int>,
+      "owner": <int>,
+      "make": <string>,
+      "model": <string>,
+      "year": <int>
+   },
+   "description": <string>,
+   "origin": {
+      "id": <int>,
+      "name": <string>,
+      "latitude": <float>,
+      "longitude": <float>
+   },
+   "destination": {
+      "id": <int>,
+      "name": <string>,
+      "latitude": <float>,
+      "longitude": <float>
+   },
+   "departure_time": <timestamp>,  // ISO-8601
+   "state": "open" | "closed" | "cancelled",
+   "passengers": [
+      {
+         "id": <int>,
+         "name": <string>,
+         "is_verified": <boolean>,
+         "stats": {
+            "avg_rating": <float>,
+            "trips_driven": <int>,
+            "trips_taken": <int>
+         }
+      },
+      ...
+   ],
+   "number_of_seats": <int>,
+   "price_per_seat": <string>
+}
+```
 
 ## How We'll Evaluate Your Work
 
