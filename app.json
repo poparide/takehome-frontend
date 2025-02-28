@@ -23,6 +23,29 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "assets/fonts/ProximaSoft-Black.ttf",
+            "assets/fonts/ProximaSoft-BlackIt.ttf",
+            "assets/fonts/ProximaSoft-Bold.ttf",
+            "assets/fonts/ProximaSoft-BoldIt.ttf",
+            "assets/fonts/ProximaSoft-ExtraBold.ttf",
+            "assets/fonts/ProximaSoft-ExtraBoldIt.ttf",
+            "assets/fonts/ProximaSoft-Light.ttf",
+            "assets/fonts/ProximaSoft-LightIt.ttf",
+            "assets/fonts/ProximaSoft-Medium.ttf",
+            "assets/fonts/ProximaSoft-MediumIt.ttf",
+            "assets/fonts/ProximaSoft-Regular.ttf",
+            "assets/fonts/ProximaSoft-RegularIt.ttf",
+            "assets/fonts/ProximaSoft-SemiBold.ttf",
+            "assets/fonts/ProximaSoft-SemiBoldIt.ttf",
+            "assets/fonts/ProximaSoft-Thin.ttf",
+            "assets/fonts/ProximaSoft-ThinIt.ttf"
+          ]
+        }
+      ],
       ["expo-router", { "origin": "https://localhost:8081" }],
       [
         "expo-splash-screen",
