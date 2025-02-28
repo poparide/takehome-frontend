@@ -27,7 +27,7 @@ async function fetchTrips({
   return response.json();
 }
 
-export default function Trip() {
+export default function TripList() {
   const { originId, destinationId, departureDate } = useLocalSearchParams<{
     originId?: string;
     destinationId?: string;

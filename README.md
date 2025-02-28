@@ -12,8 +12,10 @@ This project template is provided by [Poparide](https://poparide.com) to evaluat
 
 You need to implement two screens based on [the Figma design](https://www.figma.com/design/SyGYoUKTm3PDmjknLu1euh/Poparide-Take-home-Mobile?node-id=0-1):
 
-1. **Search Trips Screen** ([`app/(tabs)/index.tsx`](<./app/(tabs)/index.tsx>))
-2. **Search Results Screen** ([`app/(trips)/index.tsx`](<./app/(trips)/index.tsx>))
+1. **Search Tab Screen** ([`app/(tabs)/index.tsx`](<./app/(tabs)/index.tsx>))
+2. **Search Results Screen** ([`app/(trips)/trips/index.tsx`](<./app/(trips)/index.tsx>))
+
+There is an optional third screen, **Trip Details** ([`app/(trips)/trips/[id].tsx`](<./app/(trips)/trips/[id].tsx>)).
 
 ## API Endpoints
 
@@ -32,6 +34,10 @@ Returns a list of trips.
 - `origin_id=<number>`: Location ID for the trip's starting point.
 - `destination_id=<number>`: Location ID for the trip's endpoint.
 - `departure_date=<string>`: An ISO-8601 formatted date for trip departure.
+
+### `GET /api/trips/<tripId>/`
+
+Return an individual trip by it's ID.
 
 ## How We'll Evaluate Your Work
 
