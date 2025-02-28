@@ -1,5 +1,5 @@
 import { Text, ScrollView } from "react-native";
-import { ITrip, IResponse } from "../..//types";
+import { ITrip, IResponse } from "../../../types";
 import { useEffect, useState } from "react";
 import { useLocalSearchParams } from "expo-router";
 
