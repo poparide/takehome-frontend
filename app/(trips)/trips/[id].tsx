@@ -9,14 +9,14 @@ async function fetchTrip(tripId: string): Promise<ITrip> {
 }
 
 export default function TripDetail() {
-  const { tripId } = useLocalSearchParams<{ tripId: string }>();
+  const { id } = useLocalSearchParams<{ id: string }>();
 
   const [trip, setTrip] = useState<ITrip>();
   useEffect(() => {
-    fetchTrip(tripId).then((data) => {
+    fetchTrip(id).then((data) => {
       setTrip(data);
     });
-  }, [tripId]);
+  }, [id]);
 
   if (!trip) {
     return <Text>Loading...</Text>;

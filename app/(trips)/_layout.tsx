@@ -1,9 +1,5 @@
 import { Stack } from "expo-router";
 
-export default function TabLayout() {
-  return (
-    <Stack>
-      <Stack.Screen name="trip" />
-    </Stack>
-  );
+export default function TripsLayout() {
+  return <Stack screenOptions={{ title: "Trips" }} />;
 }
