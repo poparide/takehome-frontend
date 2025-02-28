@@ -6,49 +6,62 @@ import {
   locationMontreal,
   locationToronto,
 } from "../locations/index+api";
+import { vehicleOne, vehicleTwo, vehicleThree } from "../vehicles/index+api";
 
 export const tripOne: ITrip = {
   id: 1,
   creator: userAlice,
+  vehicle: vehicleOne,
+  description: "Heading back to Montreal for the weekend.",
   origin: locationToronto,
   destination: locationMontreal,
   departure_time: formatISO(add(new Date(), { days: 5 })),
   state: ITripState.OPEN,
   passengers: [userBob],
   number_of_seats: 3,
+  price_per_seat: "20.00",
 };
 
 export const tripTwo: ITrip = {
   id: 2,
   creator: userBob,
+  vehicle: vehicleTwo,
+  description: "Heading to Kitchener for Octoberfest.",
   origin: locationMontreal,
   destination: locationKitchener,
   departure_time: formatISO(add(new Date(), { days: 10 })),
   state: ITripState.OPEN,
   passengers: [userCharlie],
   number_of_seats: 2,
+  price_per_seat: "25.00",
 };
 
 export const tripThree: ITrip = {
   id: 3,
   creator: userCharlie,
+  vehicle: vehicleThree,
+  description: "Heading to Toronto for a concert.",
   origin: locationKitchener,
   destination: locationToronto,
   departure_time: formatISO(add(new Date(), { days: 15 })),
   state: ITripState.OPEN,
   passengers: [userAlice],
   number_of_seats: 1,
+  price_per_seat: "15.00",
 };
 
 export const tripFour: ITrip = {
   id: 4,
   creator: userAlice,
+  vehicle: vehicleOne,
+  description: "Heading to Montreal to surf the Montreal River.",
   origin: locationToronto,
   destination: locationMontreal,
   departure_time: formatISO(add(new Date(), { days: 1 })),
   state: ITripState.OPEN,
   passengers: [],
   number_of_seats: 3,
+  price_per_seat: "20.00",
 };
 
 export const trips = [tripOne, tripTwo, tripThree, tripFour];
