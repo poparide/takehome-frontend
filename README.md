@@ -15,11 +15,9 @@ You need to implement two screens based on [the Figma design](https://www.figma.
 1. **Search Tab Screen** ([`app/(tabs)/index.tsx`](<./app/(tabs)/index.tsx>))
 2. **Search Results Screen** ([`app/(trips)/trips/index.tsx`](<./app/(trips)/index.tsx>))
 
-There is an optional third screen, **Trip Details** ([`app/(trips)/trips/[id].tsx`](<./app/(trips)/trips/[id].tsx>)).
-
 ## API Endpoints
 
-The project includes predefined API endpoints, which you can modify or extend as needed.
+The project includes a few mock API endpoints, which you can modify or extend as needed.
 
 ### `GET /api/locations/`
 
@@ -129,7 +127,7 @@ Returns a list of trips.
 
 ### `GET /api/trips/<tripId>/`
 
-Return an individual trip by it's ID.
+Return an individual trip by its ID.
 
 <details>
 
@@ -197,6 +195,8 @@ We’ll assess your project based on the following criteria:
 
 - **Design:** Is your solution maintainable and scalable? Have you considered future changes?
 - **Code Quality:** Is your code clean, modular, and well-structured?
+- **Reusability:** Have you built components that can be easily reused in the future?
+- **Adherence to Design:** Does your implementation closely match the provided Figma design? If there are any deviations, have you documented the reasons in [`NOTES.md`](./NOTES.md)?
 - **Documentation:** Have you provided context around your decisions and assumptions? Use [`NOTES.md`](./NOTES.md) to document any relevant details.
 
 Your code will be tested on both iOS and Android simulators.
