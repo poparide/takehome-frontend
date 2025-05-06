@@ -1,6 +1,6 @@
 # Poparide Frontend Take-Home
 
-This project template is provided by [Poparide](https://poparide.com) to evaluate your frontend skills and problem-solving approach within our Product team. The base Expo template includes initial setup so you can focus on building the required features without worrying about configuration.
+This project template is provided by [Poparide](https://poparide.com) to evaluate your **frontend skills and problem-solving approach** for either a **Web** or **Mobile Engineering** role within our Product team. The base Expo template includes initial setup so you can focus on building the required features without worrying about configuration.
 
 ## Getting Started
 
@@ -199,7 +199,7 @@ We’ll assess your project based on the following criteria:
 - **Adherence to Design:** Does your implementation closely match the provided Figma design? If there are any deviations, have you documented the reasons in [`NOTES.md`](./NOTES.md)?
 - **Documentation:** Have you provided context around your decisions and assumptions? Use [`NOTES.md`](./NOTES.md) to document any relevant details.
 
-Your code will be tested on both iOS and Android simulators.
+Your code will be tested on **web** or **mobile simulators** (iOS and Android), depending on whether you're applying for a **Web** or **Mobile Engineering** position at Poparide.
 
 ### Time Expectations
 
