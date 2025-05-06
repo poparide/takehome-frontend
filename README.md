@@ -199,7 +199,7 @@ We’ll assess your project based on the following criteria:
 - **Adherence to Design:** Does your implementation closely match the provided Figma design? If there are any deviations, have you documented the reasons in [`NOTES.md`](./NOTES.md)?
 - **Documentation:** Have you provided context around your decisions and assumptions? Use [`NOTES.md`](./NOTES.md) to document any relevant details.
 
-Your code will be tested on **web** or **mobile simulators** (iOS and Android), depending on whether you're applying for a **Web** or **Mobile Engineering** position at Poparide.
+Your code will be tested in a **web browser** for Web roles or on **mobile simulators** (iOS and Android) for Mobile roles, depending on whether you're applying for a **Web** or **Mobile Engineering** position at Poparide.
 
 ### Time Expectations
 
